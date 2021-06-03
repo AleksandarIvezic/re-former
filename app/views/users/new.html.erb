@@ -16,11 +16,23 @@
 <%# <% end %>
 
 <%= form_with model: @user do |form| %>
-    <%=form.label :email, "Enter email" %>
-    <%=form.text_field :email, placeholder: "Enter email" %>
-    <%=form.label :username %>
-    <%=form.text_field :username %>
-    <%=form.label :password %>
-    <%=form.text_field :password %>
-    <%=form.submit %>
+
+  <%=form.label :email, "Enter email" %>
+  <%=form.text_field :email, placeholder: "Enter email" %>
+  <%@user.errors.full_messages_for(:email).each do |message| %>
+  <div> <%=message%></div>
+  <%end%>
+
+  <%=form.label :username %>
+  <%=form.text_field :username %>
+  <%@user.errors.full_messages_for(:username).each do |message| %>
+      <%=message%>
+      <%end%>
+
+  <%=form.label :password %>
+  <%=form.text_field :password %>
+  <%@user.errors.full_messages_for(:password).each do |message| %>
+      <div> <%=message%></div>
+      <%end%>
+  <%=form.submit %>
 <%end%>

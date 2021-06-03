@@ -1,14 +1,26 @@
 <h1>Edit The User</h1>
-<%= form_tag("/users", method: "post") do %>
-    <%= label_tag(:email, "Email:") %>
-    <%= text_field_tag(:email) %>
-  
-    <%= label_tag(:username, "Username:") %>
-    <%= text_field_tag(:username) %>
-  
-    <%= label_tag(:password, "Password:") %>
-    <%= text_field_tag(:password) %>
-  
-    <%= submit_tag("Submit") %>
-  
-    <% end %>
+
+
+
+<%= form_with model: @user do |form| %>
+
+    <%=form.label :email, "Enter email" %>
+    <%=form.text_field :email, placeholder: "Enter email" %>
+    <%@user.errors.full_messages_for(:email) do |message| %>
+    <div> <%=message%>< /div>
+    <%end%>
+
+    <%=form.label :username %>
+    <%=form.text_field :username %>
+    <%@user.errors.full_messages_for(:username) do |message| %>
+        <div> <%=message%>< /div>
+        <%end%>
+
+    <%=form.label :password %>
+    <%=form.text_field :password %>
+    <%@user.errors.full_messages_for(:password) do |message| %>
+        <div> <%=message%>< /div>
+        <%end%>
+    <%=form.submit %>
+<%end%>
+
