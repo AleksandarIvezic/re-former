@@ -5,22 +5,22 @@
 <%= form_with model: @user do |form| %>
 
     <%=form.label :email, "Enter email" %>
-    <%=form.text_field :email, placeholder: "Enter email" %>
-    <%@user.errors.full_messages_for(:email) do |message| %>
-    <div> <%=message%>< /div>
-    <%end%>
+    <%=form.email_field :email, placeholder: "Enter email" %>
+    <%@user.errors.full_messages_for(:email).each do |message| %>
+    <div> <%=message%></div>
+    <%end%><br><br>
 
     <%=form.label :username %>
     <%=form.text_field :username %>
-    <%@user.errors.full_messages_for(:username) do |message| %>
-        <div> <%=message%>< /div>
-        <%end%>
+    <%@user.errors.full_messages_for(:username).each do |message| %>
+        <div> <%=message%></div>
+        <%end%><br><br>
 
     <%=form.label :password %>
-    <%=form.text_field :password %>
-    <%@user.errors.full_messages_for(:password) do |message| %>
-        <div> <%=message%>< /div>
-        <%end%>
+    <%=form.password_field :password %>
+    <%@user.errors.full_messages_for(:password).each do |message| %>
+        <div> <%=message%></div>
+        <%end%><br><br>
     <%=form.submit %>
 <%end%>
 
