@@ -15,7 +15,7 @@ Clone this repository to get a copy of this project.
 After cloning the repo, you also need to install the required gems in your machine
 - Run `bundle install` to install the dependencies
 - Run `rails db:create` and `rails db:migrate` to create required database tables
-- Run `rails server` to perform start this app on the local server
+- Run `rails server` to start this app on the local server
 - Open `localhost:3000/users/new/` in your browser to CREATE a new user 
 - Open `localhost:3000/users/<id>/edit` to UPDATE existing user (customize your user `<id>`)
 
