@@ -1,1 +1,54 @@
 <h1>Welcome to the new user page</h1>
+
+<%# <form method='post' action ='users_path' accept-charset="UTF-8"> %>
+  <%# <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
+<%# 
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+
+  <input type="submit">
+
+</form>  %>
+
+<%# <%= form_tag("users_path", method: "post") do %> 
+  <%# <%= label_tag(:email, "Email:") %> 
+ <%# <%= email_field_tag(:email) %>
+
+  <%#<%= label_tag(:username, "Username:") %>
+ <%# <%= text_field_tag(:username) %>
+
+  <%#<%= label_tag(:password, "Password:") %>
+ <%# <%= password_field_tag(:password) %>
+
+<%#  <%= submit_tag("Submit") %>
+<%# <% end %>
+
+<%#<%= form_with model: @user do |form| %>
+
+ <%# <%=form.label :email, "Enter email" %>
+ <%# <%=form.email_field :email, placeholder: "Enter email" %>
+ <%# <%@user.errors.full_messages_for(:email).each do |message| %>
+ <%# <div> <%=message%></div>  
+  <%#<%end%>
+
+  <%#<%=form.label :username %>
+  <%#<%=form.text_field :username %>
+  <%#<%@user.errors.full_messages_for(:username).each do |message| %>
+   <%#   <%=message%>
+  <%#    <%end%>
+
+  <%#<%=form.label :password %>
+  <%#<%=form.password_field :password %>
+ <%# <%@user.errors.full_messages_for(:password).each do |message| %>
+  <%#    <div> <%=message%></div>
+  <%#    <%end%>
+  <%#<%=form.submit %>
+<%#<%end%>
+
+<%= render partial: "form"  %>
